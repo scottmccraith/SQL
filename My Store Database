@@ -1,0 +1,20 @@
+create table pizzeria (slices integer primary key, name text, quantity integer, country text, calories integer, cost integer);
+Insert into pizzeria values (1, "cheese", 2, "italy", 300, 12);
+Insert into pizzeria values (2, "pepperoni", 3, "spain", 222, 10);
+insert into pizzeria values (3, "mushroom", 5, "Mexico", 888, 33);
+insert into pizzeria values (4, "garlic", 2, "canada", 329, 22);
+insert into pizzeria values (5, "veggie", 2, "japan", 333, 9);
+
+
+select sum(calories) from(pizzeria);
+
+select * from pizzeria group by slices;
+select country, sum(calories) from pizzeria group by(country);
+select country, sum(cost) from (pizzeria) group by (country);
+select * from pizzeria where calories > 400 
+order by cost;
+
+
+
+
+
